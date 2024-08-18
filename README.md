@@ -19,9 +19,9 @@
 
 ## 使用技術(実行環境)
 
-*PHP 8.0
-*Laravel 10.0
-*MySQL 8.0
+* PHP 8.0
+* Laravel 10.0
+* MySQL 8.0
 
 ## ER 図
 
