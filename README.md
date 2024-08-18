@@ -1,6 +1,4 @@
-# アプリケーション名
-
-FashionablyLate お問い合わせフォーム
+# お問い合わせフォーム
 
 ## 環境構築
 
@@ -8,7 +6,8 @@ FashionablyLate お問い合わせフォーム
 
 1. git@github.com:MaricoIto/Check-Test.git
 2. docker-compose up -d --build
-   ＊MySQL は、OS によって起動しない場合があるのでそれぞれの PC に合わせて docker-compose.yml ファイルを編集してください。
+
+＊ MySQL は、OS によって起動しない場合があるのでそれぞれの PC に合わせて docker-compose.yml ファイルを編集してください。
 
 【Laravel 環境構築】
 
@@ -21,9 +20,9 @@ FashionablyLate お問い合わせフォーム
 
 ## 使用技術(実行環境)
 
-PHP 8.0
-Laravel 10.0
-MySQL 8.0
+- PHP 8.0
+- Laravel 10.0
+- MySQL 8.0
 
 ## ER 図
 
@@ -31,5 +30,5 @@ MySQL 8.0
 
 ## URL
 
-開発環境 : http://localhost/
-phpMyAdmin : http://localhost:8080/
+- 開発環境 : <http://localhost/>
+- phpMyAdmin : <http://localhost:8080/>
