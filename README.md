@@ -29,5 +29,9 @@
 
 ## URL
 
-開発環境 : http://localhost/
-phpMyAdmin : http://localhost:8080/
+<dl>
+  <dt>開発環境 : http://localhost/</dt>
+  <dt>phpMyAdmin : http://localhost:8080/</dt>
+</dl>
+
+
