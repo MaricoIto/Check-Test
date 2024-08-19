@@ -21,3 +21,7 @@ Homestead.yaml
 Homestead.json
 /.vagrant
 .phpunit.result.cache
+
+# ER図
+inquiry-form.drawio.png
+inquiry-form.png

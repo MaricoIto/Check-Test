@@ -26,7 +26,7 @@
 
 ## ER 図
 
-< - - - 作成した ER 図の画像 - - - >
+![inquiry-form](https://github.com/user-attachments/assets/e32b3092-1ed2-4143-9205-cd8e5cc5cfac)
 
 ## URL
 
