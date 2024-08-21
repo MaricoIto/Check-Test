@@ -1,6 +1,6 @@
 @extends('layouts.app')
 @section('css')
-<link rel="stylesheet" href="{{ asset('css/resister.css') }}" />
+<link rel="stylesheet" href="{{ asset('css/register.css') }}" />
 @endsection
 @section('auth_button')
 <a href="{{ route('login') }}" class="btn btn-primary">login</a>

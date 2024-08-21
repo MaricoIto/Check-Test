@@ -1,0 +1,48 @@
+.header {
+    background: #ffffff;
+    border-bottom: 1px solid rgba(224, 223, 222, 1);
+}
+
+.header__inner {
+    margin: 0 auto;
+    padding: 20px 15px;
+    max-width: 1230px;
+}
+
+.header-utilities {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    position: relative;
+}
+
+.header__logo {
+    margin: 0 auto;
+    font-size: 40px;
+    color: rgba(139, 121, 105, 1);
+    font-family: "Inika", serif;
+    text-decoration: none;
+    z-index: 1;
+    position: relative;
+    transform: none;
+}
+
+.header-nav {
+    width: 100px;
+    height: 34px;
+    background-color: rgba(240, 240, 240, 0.6);
+    border: rgba(217, 198, 181, 1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+    margin-left: auto;
+}
+
+.header-nav__item {
+    font-family: "Inika", serif;
+    font-weight: 400;
+    font-style: normal;
+    font-size: 20px;
+    text-align: center;
+}
