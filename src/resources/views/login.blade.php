@@ -12,7 +12,7 @@
     <div class="login__inner">
 
         <!-- タイトル -->
-        <p class="login__title">login</p>
+        <p class="login__title">Login</p>
 
         <!-- フォーム -->
         <div class="login__form-wrapper">
