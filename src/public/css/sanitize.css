@@ -18,9 +18,9 @@
 
 ::before,
 ::after {
-    vertical-align: inherit;
     /* 2 */
     text-decoration: inherit;
+    vertical-align: inherit;
     /* 1 */
 }
 
@@ -35,17 +35,17 @@
 */
 
 html {
+    /* 3 */
+    line-height: 1.5;
     word-break: break-word;
+    /* 2 */
+    cursor: default;
     /* 6 */
+
     -moz-tab-size: 4;
     /* 3 */
     tab-size: 4;
-    /* 3 */
-    line-height: 1.5;
-    /* 2 */
-    cursor: default;
     /* 1 */
-
     -webkit-tap-highlight-color: transparent /* 4 */;
     -ms-text-size-adjust: 100%;
     /* 5 */
@@ -106,9 +106,9 @@ ul ul {
 */
 
 hr {
-    overflow: visible;
     /* 2 */
     height: 0;
+    overflow: visible;
     /* 1 */
 }
 
@@ -126,8 +126,8 @@ main {
 
 nav ol,
 nav ul {
-    padding: 0;
     list-style: none;
+    padding: 0;
 }
 
 /**
@@ -369,9 +369,9 @@ select {
 */
 
 textarea {
-    overflow: auto;
     /* 2 */
     margin: 0;
+    overflow: auto;
     /* 1 */
     resize: vertical;
     /* 3 */
@@ -394,7 +394,6 @@ textarea {
 [type="search"] {
     outline-offset: -2px;
     /* 2 */
-
     -webkit-appearance: textfield;
     /* 1 */
 }
@@ -413,8 +412,8 @@ textarea {
 */
 
 ::-webkit-input-placeholder {
-    color: inherit;
     opacity: 0.54;
+    color: inherit;
 }
 
 /**
@@ -479,18 +478,18 @@ details {
 */
 
 dialog {
+    display: block;
     position: absolute;
     right: 0;
     left: 0;
-    display: block;
-    margin: auto;
-    padding: 1em;
     width: -moz-fit-content;
     width: -webkit-fit-content;
     width: fit-content;
     height: -moz-fit-content;
     height: -webkit-fit-content;
     height: fit-content;
+    margin: auto;
+    padding: 1em;
     border: solid;
     background-color: white;
     color: black;
@@ -599,5 +598,6 @@ textarea,
 
 [aria-hidden="false"][hidden]:not(:focus) {
     position: absolute;
+
     clip: rect(0, 0, 0, 0);
 }
