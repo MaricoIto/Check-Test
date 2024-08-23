@@ -11,4 +11,14 @@ class ContactController extends Controller
     {
         return view('register');
     }
+
+    function login()
+    {
+        return view('login');
+    }
+
+    function admin()
+    {
+        return view('admin');
+    }
 }
