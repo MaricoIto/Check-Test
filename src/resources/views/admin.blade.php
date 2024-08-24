@@ -33,10 +33,11 @@
     <!-- 出力ボタンとページネーション -->
     <div class="admin__menu">
         <button type="submit" class="admin__btn-export">エクスポート</button>
-        <p>ページネーションの表示</p>
+        {{ $contacts->links() }}
     </div>
 
     <!-- テーブル -->
+
     <table class="admin__table">
         <tr>
             <th>お名前</th>
