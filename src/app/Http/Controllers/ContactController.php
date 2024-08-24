@@ -19,6 +19,7 @@ class ContactController extends Controller
 
     function admin()
     {
-        return view('admin');
+        $contacts = Contact::all();
+        return view('admin', compact('contacts'));
     }
 }

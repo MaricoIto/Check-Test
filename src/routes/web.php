@@ -16,5 +16,4 @@ use App\Http\Controllers\ContactController;
 
 Route::get('/register', [ContactController::class, 'register'])->name('register');
 Route::get('/login', [ContactController::class, 'login'])->name('login');
-
 Route::get('/admin', [ContactController::class, 'admin'])->name('admin');
