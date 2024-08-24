@@ -8,12 +8,12 @@
 <div class="contact">
 
     <!-- タイトル -->
-    <p class="contact__title">お問い合わせフォーム</p>
+    <p class="contact__title">Contact</p>
 
     <!-- 入力フォーム -->
     <form class="contact__form" method="POST" action="{{ route('contact.confirm') }}">
         @csrf
-        <table>
+        <table class="contact__form-table">
 
             <tr>
                 <th>
@@ -26,8 +26,8 @@
                     @endif
                 </th>
                 <td>
-                    <input type="text" name="first_name" class="contact__form" placeholder="例: 山田" value="{{ old('first_name') }}">
-                    <input type="text" name="last_name" class="contact__form" placeholder="例: 太郎" value="{{ old('last_name') }}">
+                    <input type="text" name="first_name" class="contact__form-item name" placeholder="例: 山田" value="{{ old('first_name') }}">
+                    <input type="text" name="last_name" class="contact__form-item name" placeholder="例: 太郎" value="{{ old('last_name') }}">
                 </td>
             </tr>
 
@@ -39,10 +39,20 @@
                     <span class="error-message">{{ $errors->first('gender') }}</span>
                     @endif
                 </th>
+
                 <td>
-                    <label><input type="radio" name="gender" value="男性" {{ old('gender') == '男性' ? 'checked' : '' }}> 男性</label>
-                    <label><input type="radio" name="gender" value="女性" {{ old('gender') == '女性' ? 'checked' : '' }}> 女性</label>
-                    <label><input type="radio" name="gender" value="その他" {{ old('gender') == 'その他' ? 'checked' : '' }}> その他</label>
+                    <label class="custom-radio">
+                        <input type="radio" name="gender" value="男性" {{ old('gender', '男性') == '男性' ? 'checked' : '' }}>
+                        <span>男性</span>
+                    </label>
+                    <label class="custom-radio">
+                        <input type="radio" name="gender" value="女性" {{ old('gender') == '女性' ? 'checked' : '' }}>
+                        <span>女性</span>
+                    </label>
+                    <label class="custom-radio">
+                        <input type="radio" name="gender" value="その他" {{ old('gender') == 'その他' ? 'checked' : '' }}>
+                        <span>その他</span>
+                    </label>
                 </td>
             </tr>
 
@@ -55,7 +65,7 @@
                     @endif
                 </th>
                 <td>
-                    <input type="email" name="email" class="contact__form" placeholder="例: test@example.com" value="{{ old('email') }}">
+                    <input type="email" name="email" class="contact__form-item mail" placeholder="例: test@example.com" value="{{ old('email') }}">
                 </td>
             </tr>
 
@@ -70,11 +80,11 @@
                     @endif
                 </th>
                 <td>
-                    <input type="text" name="phone1" class="contact__form" maxlength="3" pattern="\d{3}" placeholder="例: 090" value="{{ old('phone1') }}">
+                    <input type="text" name="phone1" class="contact__form-item phone" maxlength="3" pattern="\d{3}" placeholder="例: 080" value="{{ old('phone1') }}">
                     -
-                    <input type="text" name="phone2" class="contact__form" maxlength="4" pattern="\d{4}" placeholder="例: 1234" value="{{ old('phone2') }}">
+                    <input type="text" name="phone2" class="contact__form-item phone" maxlength="4" pattern="\d{4}" placeholder="例: 1234" value="{{ old('phone2') }}">
                     -
-                    <input type="text" name="phone3" class="contact__form" maxlength="4" pattern="\d{4}" placeholder="例: 5678" value="{{ old('phone3') }}">
+                    <input type="text" name="phone3" class="contact__form-item phone" maxlength="4" pattern="\d{4}" placeholder="例: 5678" value="{{ old('phone3') }}">
                 </td>
             </tr>
 
@@ -87,7 +97,7 @@
                     @endif
                 </th>
                 <td>
-                    <input type="text" name="address" class="contact__form" placeholder="例: 東京都渋谷区" value="{{ old('address') }}">
+                    <input type="text" name="address" class="contact__form-item address" placeholder="例: 東京都渋谷区千駄ヶ谷1-2-3" value="{{ old('address') }}">
                 </td>
             </tr>
 
@@ -96,7 +106,7 @@
                     建物名
                 </th>
                 <td>
-                    <input type="text" name="building" class="contact__form" placeholder="例: 渋谷マンション303号室" value="{{ old('building') }}">
+                    <input type="text" name="building" class="contact__form-item address" placeholder="例: 千駄ヶ谷マンション101" value="{{ old('building') }}">
                 </td>
             </tr>
 
@@ -109,7 +119,7 @@
                     @endif
                 </th>
                 <td>
-                    <select name="inquiry_type" class="contact__form">
+                    <select name="inquiry_type" class="contact__form-item category">
                         <option value="">選択してください</option>
                         <option value="製品に関する問い合わせ" {{ old('inquiry_type') == '製品に関する問い合わせ' ? 'selected' : '' }}>製品に関する問い合わせ</option>
                         <option value="サポートに関する問い合わせ" {{ old('inquiry_type') == 'サポートに関する問い合わせ' ? 'selected' : '' }}>サポートに関する問い合わせ</option>
@@ -127,7 +137,7 @@
                     @endif
                 </th>
                 <td>
-                    <textarea name="inquiry_content" class="contact__form" placeholder="お問い合わせ内容を入力してください">{{ old('inquiry_content') }}</textarea>
+                    <textarea name="inquiry_content" class="contact__form-item content" placeholder="お問い合わせ内容をご記載ください">{{ old('inquiry_content') }}</textarea>
                 </td>
             </tr>
         </table>

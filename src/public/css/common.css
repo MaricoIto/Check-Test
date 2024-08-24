@@ -36,22 +36,30 @@ body {
     text-decoration: none;
 }
 
+/* ボタンの表示・非表示をページに対応させる */
+
 .header-nav {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    position: absolute;
-    right: 0;
-    z-index: 1;
     width: 100px;
     height: 34px;
-    border: #d9c6b5;
-    background-color: #f0f0f0;
+    display: none;
 }
 
-.header-nav__item {
-    font-style: normal;
-    font-weight: 400;
-    font-size: 20px;
-    text-align: center;
+@hassection ('auth_button') {
+    .header-nav {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        position: absolute;
+        right: 0;
+        z-index: 1;
+        border: #d9c6b5;
+        background-color: #f0f0f0;
+    }
+
+    .header-nav__item {
+        font-style: normal;
+        font-weight: 400;
+        font-size: 20px;
+        text-align: center;
+    }
 }
