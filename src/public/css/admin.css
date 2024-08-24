@@ -39,8 +39,7 @@ body {
     color: #beb1a6ff;
 }
 
-.admin__search-form--select,
-.admin__search-form--date {
+.admin__search-form--select, .admin__search-form--date {
     padding: 0 15px;
     border: 1px solid #e3ded9;
     background-color: #f4f4f4;
@@ -77,24 +76,13 @@ body {
 }
 .admin__table {
     width: 100%;
-    text-align: left;
     border: 1px solid #e0dfde;
     font-size: 18px;
+    text-align: left;
 }
 
-.admin__table th,
-td {
+.admin__table th, td {
     height: 50px;
-}
-
-.admin__table th:first-child,
-td:first-child {
-    padding-left: 3%;
-}
-
-.admin__table th:last-child,
-td:last-child {
-    padding-right: 3%;
 }
 
 .admin__table th {
@@ -107,11 +95,19 @@ td:last-child {
     color: #8b7969;
 }
 
+.admin__table th:first-child, td:first-child {
+    padding-left: 3%;
+}
+
+.admin__table th:last-child, td:last-child {
+    padding-right: 3%;
+}
+
 .admin__table button {
     width: 70px;
     height: 35px;
-    background-color: #f4f4f44d;
     border: 1px solid #d9c6b599;
+    background-color: #f4f4f44d;
     color: #d9c6b5;
     font-size: 16px;
 }
