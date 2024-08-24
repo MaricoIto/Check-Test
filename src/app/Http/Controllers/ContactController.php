@@ -11,7 +11,7 @@ class ContactController extends Controller
     // お問い合わせフォームを表示
     public function contact()
     {
-        return view('index');
+        return redirect()->route('thanks');
     }
 
     // 確認画面を表示
@@ -47,19 +47,22 @@ class ContactController extends Controller
         return view('thanks');
     }
 
+    // ユーザー登録画面を表示
     public function register()
     {
         return view('register');
     }
 
+    // ログイン画面を表示
     public function login()
     {
         return view('login');
     }
 
+    // 管理者画面を表示
     public function admin()
     {
-        $contacts = Contact::all();
+        $contacts = Contact::simplePaginate(7);
         return view('admin', compact('contacts'));
     }
 }

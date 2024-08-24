@@ -1,14 +1,19 @@
 @extends('layouts.app')
 
+@section('css')
+<link rel="stylesheet" href="{{ asset('css/confirm.css') }}" />
+@endsection
+
 @section('content')
-<div class="contact-confirm">
-    <h1>確認画面</h1>
+<div class="confirm">
+
+    <p class="confirm__title">confirm</p>
 
     <!-- 確認内容表示 -->
-    <table>
+    <table class="confirm__table">
         <tr>
             <th>お名前</th>
-            <td>{{ $data['first_name'] }} {{ $data['last_name'] }}</td>
+            <td>{{ $data['last_name'] }} {{ $data['first_name'] }}</td>
         </tr>
         <tr>
             <th>性別</th>
@@ -20,7 +25,7 @@
         </tr>
         <tr>
             <th>電話番号</th>
-            <td>{{ $data['phone1'] }}-{{ $data['phone2'] }}-{{ $data['phone3'] }}</td>
+            <td>{{ $data['phone1'] }}{{ $data['phone2'] }}{{ $data['phone3'] }}</td>
         </tr>
         <tr>
             <th>住所</th>
@@ -41,13 +46,13 @@
     </table>
 
     <!-- 修正と送信ボタン -->
-    <form method="POST" action="{{ route('contact.submit') }}">
-        @csrf
-        <button type="submit">送信</button>
-    </form>
+    <div class="confirm__btn">
+        <form method="POST" action="{{ route('contact.submit') }}">
+            @csrf
+            <button type="submit" class="confirm__btn--submit">送信</button>
+        </form>
 
-    <form method="GET" action="{{ route('contact') }}">
-        <button type="submit">修正</button>
-    </form>
+        <a href="{{ route('contact') }}" class="confirm__btn--back">修正</a>
+    </div>
 </div>
 @endsection

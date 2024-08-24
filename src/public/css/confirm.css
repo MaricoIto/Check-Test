@@ -1,0 +1,101 @@
+body {
+    background-color: #ffffff;
+    color: #8b7969;
+    font-size: 16px;
+}
+
+.confirm {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 970px;
+    margin: 40px auto;
+}
+
+.confirm__title {
+    margin: 0 auto 30px auto;
+    color: #8b7969;
+    font-size: 35px;
+    text-align: center;
+}
+
+/* テーブル */
+.confirm__table {
+    width: 100%;
+    border: 1px solid #e0dfde;
+    font-size: 18px;
+    text-align: left;
+    border-collapse: collapse;
+}
+
+.confirm__table th, .confirm__table td {
+    height: 70px;
+    padding: 0 5%;
+    line-height: 1.5;
+    text-align: left;
+    vertical-align: middle;
+}
+
+.confirm__table th {
+    width: 33%;
+    border-top: none;
+    border-bottom: 1px solid #ffffff;
+    background-color: #baa899;
+    color: #ffffff;
+    font-weight: normal;
+    font-size: 20px;
+}
+
+.confirm__table td {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    width: 100%;
+    border-top: none;
+    border-bottom: 1px solid #e0dfde;
+
+    gap: 15px;
+}
+
+.confirm__table th:first-child, .confirm__table td:first-child {
+    padding-left: 3%;
+}
+
+.confirm__table th:last-child, .confirm__table td:last-child {
+    padding-right: 3%;
+}
+
+.confirm__table tr:first-child th, .confirm__table tr:first-child td {
+    border-top: none;
+}
+
+.confirm__table tr:last-child th, .confirm__table tr:last-child td {
+    border-bottom: none;
+}
+
+.confirm__btn {
+    display: flex;
+    justify-content: center;
+    margin: 50px auto;
+
+    gap: 50px;
+}
+
+.confirm__btn--submit {
+    width: 120px;
+    height: 40px;
+    padding: 0;
+    border: none;
+    background-color: #82756a;
+    color: #ffffff;
+    font-size: 20px;
+    text-align: center;
+}
+
+.confirm__btn--back {
+    color: #82756a;
+    font-size: 20px;
+    line-height: 40px;
+    text-decoration: underline;
+}

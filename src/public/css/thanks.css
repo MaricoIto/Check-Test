@@ -1,0 +1,48 @@
+* {
+    font-family: "Inika", "Noto Sans JP", sans-serif;
+}
+
+main {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    height: 100vh;
+    overflow: hidden;
+    background-color: #ffffff;
+    text-align: center;
+}
+
+.thanks {
+    z-index: 1;
+}
+
+.thanks__message {
+    margin-bottom: 4rem;
+    color: #8b7969;
+    font-weight: bold;
+    font-size: 2rem;
+}
+
+.thanks__btn {
+    width: 140px;
+    height: 45px;
+    border: none;
+    background-color: #82756a;
+}
+
+.thanks__btn a {
+    color: #ffffff;
+    font-weight: normal;
+    font-size: 20px;
+    text-decoration: none;
+}
+
+.background-text {
+    position: absolute;
+    z-index: 0;
+    color: #8b79690d;
+    font-size: 280px;
+
+    user-select: none;
+}
