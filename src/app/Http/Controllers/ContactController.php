@@ -11,7 +11,7 @@ class ContactController extends Controller
     // お問い合わせフォームを表示
     public function contact()
     {
-        return view('index');
+        return redirect()->route('thanks');
     }
 
     // 確認画面を表示

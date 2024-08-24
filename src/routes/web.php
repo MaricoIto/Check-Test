@@ -20,3 +20,6 @@ Route::post('/submit', [ContactController::class, 'submit'])->name('contact.subm
 Route::get('/register', [ContactController::class, 'register'])->name('register');
 Route::get('/login', [ContactController::class, 'login'])->name('login');
 Route::get('/admin', [ContactController::class, 'admin'])->name('admin');
+Route::get('/thanks', function () {
+    return view('thanks');
+})->name('thanks');
