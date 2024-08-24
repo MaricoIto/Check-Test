@@ -8,7 +8,7 @@
 <div class="contact">
 
     <!-- タイトル -->
-    <p class="contact__title">お問い合わせフォーム</p>
+    <p class="contact__title">Contact</p>
 
     <!-- 入力フォーム -->
     <form class="contact__form" method="POST" action="{{ route('contact.confirm') }}">

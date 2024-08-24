@@ -29,7 +29,9 @@
                     <ul class="header-nav">
                         <li class="header-nav__item">
                             <!-- ログインページまたは登録ページへのリンク -->
+                            @hasSection('auth_button')
                             @yield('auth_button')
+                            @endif
                         </li>
                     </ul>
                 </nav>
