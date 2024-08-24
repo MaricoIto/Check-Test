@@ -1,0 +1,112 @@
+body {
+    background-color: #ffffff;
+    color: #8b7969;
+    font-size: 16px;
+}
+
+.contact {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    max-width: 970px;
+    margin: 40px auto;
+}
+
+.contact__title {
+    margin: 0 auto 30px auto;
+    color: #8b7969;
+    font-size: 35px;
+    text-align: center;
+}
+
+
+/* フォーム */
+.contact__form-table {
+    width: 100%;
+}
+
+.contact__form-table th {
+    padding: 0 50px 30px 0;
+    color: #8b7969;
+    font-weight: normal;
+    font-size: 20px;
+    text-align: left;
+    vertical-align: top;
+}
+
+.contact__form-table td {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    width: 100%;
+
+    gap: 15px;
+}
+
+.required-mark {
+    color: red;
+}
+
+.contact__form-item {
+    flex: 1;
+    height: 35px;
+    padding: 0 15px;
+    border: none;
+    background-color: #f4f4f4;
+    color: #beb1a6;
+    font-family: "Inika", "Noto Sans JP", sans-serif;
+}
+
+.phone {
+    text-align: center;
+}
+
+.category {
+    flex: none;
+    width: 350px;
+}
+
+.content {
+    height: 130px;
+}
+
+/* ラジオボタンのデザイン */
+.custom-radio {
+    display: flex;
+    align-items: center;
+    margin-right: 50px;
+    font-family: "Inika", "Noto Sans JP", sans-serif;
+    cursor: pointer;
+}
+
+.custom-radio input[type="radio"] {
+    display: none;
+}
+
+.custom-radio input[type="radio"] + span:before {
+    display: inline-block;
+    margin-right: 8px;
+    color: #8b7969;
+    font-size: 20px;
+    line-height: 1;
+    vertical-align: middle;
+    content: "○"; /* 選択していない時 */
+}
+
+.custom-radio input[type="radio"]:checked + span:before {
+    content: "●"; /* 選択している時 */
+}
+
+
+/* 確認ボタン */
+.contact__submit-btn {
+    display: block;
+    width: 160px;
+    height: 45px;
+    margin: 50px auto;
+    border: none;
+    background-color: #82756a;
+    color: #ffffff;
+    font-size: 20px;
+}
