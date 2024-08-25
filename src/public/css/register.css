@@ -17,10 +17,15 @@ body {
 
 /* フォーム */
 .register__form-wrapper {
-    width: 736px;
+    display: flex;
+    align-items: center;
+    width: 60%;
+    min-width: 445px;
+    max-width: 735px;
+    height: 100%;
     margin: 0 auto;
     margin-bottom: 10%;
-    padding: 75px 145px;
+    padding: 90px 145px;
     border: 1px solid #c5b9b0;
     border-radius: 10px;
     background-color: #ffffff;
@@ -39,7 +44,7 @@ body {
     flex-flow: column;
     justify-content: space-between;
     width: 100%;
-    margin: 0 auto 30px auto;
+    margin: 0 auto 50px auto;
 }
 
 .register__form-label {
@@ -85,6 +90,7 @@ body {
     display: flex;
     align-items: center;
     height: 10%;
+    margin-top: 50px;
 }
 
 .btn-submit {
