@@ -15,9 +15,16 @@ use App\Http\Controllers\UserController;
 |
 */
 
-Route::get('/', [ContactController::class, 'contact'])->name('contact');
+// お問い合わせフォームのルート
+Route::get('/', [ContactController::class, 'index'])->name('index');
 Route::post('/confirm', [ContactController::class, 'confirm'])->name('contact.confirm');
+Route::get('/contact', [ContactController::class, 'index'])->name('contact');
 Route::post('/submit', [ContactController::class, 'submit'])->name('contact.submit');
+Route::get('/thanks', function () {
+    return view('thanks');
+})->name('thanks');
+
+// ユーザ登録とログインのルート
 Route::get('/register', [ContactController::class, 'register'])->name('register');
 Route::post('/register', [UserController::class, 'store'])->name('register');
 Route::get('/login', [UserController::class, 'showLoginForm'])->name('login');
@@ -32,9 +39,6 @@ Route::middleware(['auth'])->group(function () {
 
 
 // 開発確認のルート
-Route::get('/thanks', function () {
-    return view('thanks');
-})->name('thanks');
 Route::get('/admin-dev', [ContactController::class, 'admin'])->name('admin.dev');
 Route::get('/confirm-dev', function () {
     // 確認用の固定データ
