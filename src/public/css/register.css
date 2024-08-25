@@ -20,8 +20,8 @@ body {
     display: flex;
     align-items: center;
     width: 60%;
-    min-width: 445px;
-    max-width: 735px;
+    min-width: 500px;
+    max-width: 1000px;
     height: 100%;
     margin: 0 auto;
     margin-bottom: 10%;
@@ -64,6 +64,7 @@ body {
     font-family: "Inika", "Noto Sans JP", sans-serif;
 }
 
+/* エラーメッセージ */
 .register__form-group--alert {
     width: 100%;
     margin-top: 5px;
@@ -72,12 +73,12 @@ body {
     background-color: #ff00000d;
 }
 
-.register__form-group--alert ul {
+.login__form-group--alert ul {
     margin-left: 0;
     padding-left: 0;
 }
 
-.register__form-group--alert li {
+.login__form-group--alert li {
     list-style: none;
     margin-left: 0;
     padding-left: 25px;
@@ -94,7 +95,7 @@ body {
 }
 
 .btn-submit {
-    width: 30%;
+    width: 170px;
     margin: 0 auto;
     padding: 10px 20px;
     border: none;

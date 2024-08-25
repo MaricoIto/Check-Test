@@ -146,16 +146,15 @@ return [
 
     'features' => [
         Features::registration(),
-        //今回の指示内容に含まれていないため、以下の機能をコメントアウト
-        // Features::resetPasswords(),
-        // Features::emailVerification(),
-        // Features::updateProfileInformation(),
-        // Features::updatePasswords(),
-        // Features::twoFactorAuthentication([
-        // 'confirm' => true,
-        // 'confirmPassword' => true,
-        // 'window' => 0,
-        // ]),
+        Features::resetPasswords(),
+        Features::emailVerification(),
+        Features::updateProfileInformation(),
+        Features::updatePasswords(),
+        Features::twoFactorAuthentication([
+        'confirm' => true,
+        'confirmPassword' => true,
+        'window' => 0,
+        ]),
     ],
 
 ];

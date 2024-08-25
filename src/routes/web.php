@@ -20,8 +20,14 @@ Route::post('/confirm', [ContactController::class, 'confirm'])->name('contact.co
 Route::post('/submit', [ContactController::class, 'submit'])->name('contact.submit');
 Route::get('/register', [ContactController::class, 'register'])->name('register');
 Route::post('/register', [UserController::class, 'store'])->name('register');
-Route::get('/login', [ContactController::class, 'login'])->name('login');
-Route::get('/admin', [ContactController::class, 'admin'])->name('admin');
+Route::get('/login', [UserController::class, 'showLoginForm'])->name('login');
+Route::post('/login', [UserController::class, 'login'])->name('login');
+
+// 認証が必要なルート
+Route::middleware(['auth'])->group(function () {
+    Route::get('/admin', [ContactController::class, 'admin'])->name('admin');
+});
+
 
 // 開発確認のルート
 Route::get('/thanks', function () {
