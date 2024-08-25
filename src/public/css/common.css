@@ -8,25 +8,26 @@ body {
     height: 100px;
     border-bottom: 1px solid #e0dfde;
     background: #ffffff;
-    font-family: "Inika", serif;
 }
 
 .header__inner {
     max-width: 1230px;
+    height: 100px;
     margin: 0 auto;
     padding: 20px 15px;
 }
 
 .header-utilities {
     display: flex;
-    justify-content: center;
+    justify-content: flex-end;
     align-items: center;
     position: relative;
+    height: 100%;
+    overflow: visible;
 }
 
 .header__logo {
     position: absolute;
-    top: 50%;
     left: 50%;
     z-index: 1;
     transform: translateX(-50%);
@@ -38,28 +39,38 @@ body {
 
 /* ボタンの表示・非表示をページに対応させる */
 
-.header-nav {
+nav {
     width: 100px;
-    height: 34px;
-    display: none;
+    height: 35px;
 }
 
-@hassection ('auth_button') {
-    .header-nav {
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        position: absolute;
-        right: 0;
-        z-index: 1;
-        border: #d9c6b5;
-        background-color: #f0f0f0;
-    }
+.header-nav {
+    display: flex;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    height: 35px;
+    margin: 0;
+    padding: 0;
+}
 
-    .header-nav__item {
-        font-style: normal;
-        font-weight: 400;
-        font-size: 20px;
-        text-align: center;
-    }
+.header-nav.visible {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    z-index: 1;
+    width: 100px;
+    height: 35px;
+    border: 1px solid #d9c6b5;
+    background-color: #f0f0f099;
+}
+
+.header-nav__item {
+    display: block;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    font-size: 20px;
+    text-align: center;
 }

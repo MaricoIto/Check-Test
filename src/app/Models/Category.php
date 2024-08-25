@@ -8,4 +8,7 @@ use Illuminate\Database\Eloquent\Model;
 class Category extends Model
 {
     use HasFactory;
+
+    // ホワイトリスト
+    protected $fillable = ['content'];
 }

@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ContactController;
+use App\Http\Controllers\UserController;
 
 /*
 |--------------------------------------------------------------------------
@@ -18,13 +19,23 @@ Route::get('/', [ContactController::class, 'contact'])->name('contact');
 Route::post('/confirm', [ContactController::class, 'confirm'])->name('contact.confirm');
 Route::post('/submit', [ContactController::class, 'submit'])->name('contact.submit');
 Route::get('/register', [ContactController::class, 'register'])->name('register');
-Route::get('/login', [ContactController::class, 'login'])->name('login');
-Route::get('/admin', [ContactController::class, 'admin'])->name('admin');
+Route::post('/register', [UserController::class, 'store'])->name('register');
+Route::get('/login', [UserController::class, 'showLoginForm'])->name('login');
+Route::post('/login', [UserController::class, 'login'])->name('login');
+
+// 認証が必要なルート
+Route::middleware(['auth'])->group(function () {
+    Route::get('/admin', [ContactController::class, 'admin'])->name('admin');
+    Route::get('admin/search', [ContactController::class, 'search'])->name('admin.search');
+    Route::get('/admin/export', [ContactController::class, 'export'])->name('admin.export');
+});
+
 
 // 開発確認のルート
 Route::get('/thanks', function () {
     return view('thanks');
 })->name('thanks');
+Route::get('/admin-dev', [ContactController::class, 'admin'])->name('admin.dev');
 Route::get('/confirm-dev', function () {
     // 確認用の固定データ
     $data = [

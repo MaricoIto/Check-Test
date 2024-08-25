@@ -76,13 +76,19 @@ body {
 }
 .admin__table {
     width: 100%;
+    height: 40px;
     border: 1px solid #e0dfde;
     font-size: 18px;
     text-align: left;
 }
 
 .admin__table th, td {
-    height: 50px;
+    min-height: 60px;
+    padding: 10px;
+    word-wrap: break-word;
+    vertical-align: middle;
+
+    overflow-wrap: break-word;
 }
 
 .admin__table th {
