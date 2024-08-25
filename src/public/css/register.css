@@ -1,5 +1,6 @@
 body {
-    background-color: #f5f5f5;
+    background-color: #f1ece7;
+    font-family: "Inika", "Noto Sans JP", sans-serif;
 }
 
 .header__btn {
@@ -14,9 +15,9 @@ body {
     text-align: center;
 }
 
+/* フォーム */
 .register__form-wrapper {
     width: 736px;
-    height: 644px;
     margin: 0 auto;
     margin-bottom: 10%;
     padding: 75px 145px;
@@ -55,11 +56,34 @@ body {
     background-color: #f5f5f5;
     color: #8b7969;
     font-size: 14px;
+    font-family: "Inika", "Noto Sans JP", sans-serif;
 }
 
+.register__form-group--alert {
+    width: 100%;
+    margin-top: 5px;
+    border: 2px solid #ff0000;
+    border-radius: 5px;
+    background-color: #ff00000d;
+}
+
+.register__form-group--alert ul {
+    margin-left: 0;
+    padding-left: 0;
+}
+
+.register__form-group--alert li {
+    list-style: none;
+    margin-left: 0;
+    padding-left: 25px;
+    color: #ff0000;
+    font-size: 14px;
+}
+
+/* 登録のボタン */
 .register__form-btn {
     display: flex;
-    align-items: flex-end;
+    align-items: center;
     height: 10%;
 }
 
@@ -70,7 +94,6 @@ body {
     border: none;
     border-radius: 0;
     background-color: #82756a;
-    color: #ffffff;
     color: #ffffff;
     font-size: 20px;
 }
