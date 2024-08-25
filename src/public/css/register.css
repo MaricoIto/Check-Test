@@ -73,12 +73,12 @@ body {
     background-color: #ff00000d;
 }
 
-.login__form-group--alert ul {
+.register__form-group--alert ul {
     margin-left: 0;
     padding-left: 0;
 }
 
-.login__form-group--alert li {
+.register__form-group--alert li {
     list-style: none;
     margin-left: 0;
     padding-left: 25px;

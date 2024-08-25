@@ -26,15 +26,13 @@
                     FasionablyLate
                 </a>
                 <nav>
-                    <ul class="header-nav">
-                        <!-- ボタン表示があるページのみ表示 -->
-                        <ul class="header-nav @hasSection('auth_button') visible @endif">
-                            <li class="header-nav__item">
-                                @yield('auth_button')
-                            </li>
-                        </ul>
-
+                    <!-- ボタン表示があるページのみ表示 -->
+                    <ul class="header-nav @hasSection('auth_button') visible @endif">
+                        <li class="header-nav__item">
+                            @yield('auth_button')
+                        </li>
                     </ul>
+
                 </nav>
             </div>
         </div>

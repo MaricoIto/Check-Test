@@ -26,6 +26,8 @@ Route::post('/login', [UserController::class, 'login'])->name('login');
 // 認証が必要なルート
 Route::middleware(['auth'])->group(function () {
     Route::get('/admin', [ContactController::class, 'admin'])->name('admin');
+    Route::get('admin/search', [ContactController::class, 'search'])->name('admin.search');
+    Route::get('/admin/export', [ContactController::class, 'export'])->name('admin.export');
 });
 
 
@@ -33,6 +35,7 @@ Route::middleware(['auth'])->group(function () {
 Route::get('/thanks', function () {
     return view('thanks');
 })->name('thanks');
+Route::get('/admin-dev', [ContactController::class, 'admin'])->name('admin.dev');
 Route::get('/confirm-dev', function () {
     // 確認用の固定データ
     $data = [
