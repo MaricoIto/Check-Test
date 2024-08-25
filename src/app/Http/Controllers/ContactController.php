@@ -7,19 +7,22 @@ use App\Models\Category;
 use Illuminate\Http\Request;
 use App\Http\Requests\ContactRequest;
 use Illuminate\Support\Facades\Response;
+use Illuminate\Support\Facades\Log;
 
 class ContactController extends Controller
 {
     // お問い合わせフォームを表示
-    public function contact()
+    public function index()
     {
-        return redirect()->route('thanks');
+        return view('index');
     }
+
 
     // 確認画面を表示
     public function confirm(ContactRequest $request)
     {
         $data = $request->validated();
+        $data['building'] = $data['building'] ?? '';
         $request->session()->put('contact', $data);
 
         return view('confirm', compact('data'));

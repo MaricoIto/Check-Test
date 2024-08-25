@@ -33,7 +33,7 @@
         </tr>
         <tr>
             <th>建物名</th>
-            <td>{{ $data['building'] }}</td>
+            <td>{{ isset($data['building']) && $data['building'] ? e($data['building']) : '' }}</td>
         </tr>
         <tr>
             <th>お問い合わせの種類</th>
@@ -52,7 +52,7 @@
             <button type="submit" class="confirm__btn--submit">送信</button>
         </form>
 
-        <a href="{{ route('contact') }}" class="confirm__btn--back">修正</a>
+        <a href="{{ route('index') }}" class="confirm__btn--back">修正</a>
     </div>
 </div>
 @endsection

@@ -20,8 +20,6 @@ body {
     text-align: center;
 }
 
-
-/* フォーム */
 .contact__form-table {
     width: 100%;
 }
@@ -37,11 +35,41 @@ body {
 
 .contact__form-table td {
     display: flex;
-    flex-wrap: wrap;
-    align-items: center;
+    flex-direction: row;
+    align-items: flex-start;
     width: 100%;
 
-    gap: 15px;
+    gap: 10px;
+}
+
+.phone-wrapper {
+    display: flex;
+    align-items: flex-start;
+    width: 100%;
+    height: 38px;
+
+    gap: 5px;
+}
+
+.contact__form-item-wrapper {
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+    position: relative;
+}
+
+.phone-separator-wrapper {
+    display: flex;
+    flex: none;
+    justify-content: center;
+    align-items: center;
+    height: 38px;
+}
+
+.phone-separator {
+    color: #8b7969;
+    font-weight: bold;
+    font-size: 16px;
 }
 
 .required-mark {
@@ -50,9 +78,12 @@ body {
 
 .contact__form-item {
     flex: 1;
-    height: 35px;
+    width: 100%;
+    height: 38px;
+    margin-bottom: 5px;
     padding: 0 15px;
     border: none;
+    box-sizing: border-box;
     background-color: #f4f4f4;
     color: #beb1a6;
     font-family: "Inika", "Noto Sans JP", sans-serif;
@@ -63,19 +94,19 @@ body {
 }
 
 .category {
-    flex: none;
-    width: 350px;
+    width: 100%;
 }
 
 .content {
     height: 130px;
+    margin-bottom: 5px;
 }
 
-/* ラジオボタンのデザイン */
 .custom-radio {
     display: flex;
     align-items: center;
     margin-right: 50px;
+    margin-bottom: 5px;
     font-family: "Inika", "Noto Sans JP", sans-serif;
     cursor: pointer;
 }
@@ -91,15 +122,32 @@ body {
     font-size: 20px;
     line-height: 1;
     vertical-align: middle;
-    content: "○"; /* 選択していない時 */
+    content: "○";
 }
 
 .custom-radio input[type="radio"]:checked + span:before {
-    content: "●"; /* 選択している時 */
+    content: "●";
 }
 
+.contact__form-group--alert {
+    width: 100%;
+    margin-top: 5px;
+    color: #ff0000;
+    font-size: 14px;
+    text-align: left;
+}
 
-/* 確認ボタン */
+.contact__form-group--alert ul {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+}
+
+.contact__form-group--alert li {
+    margin: 0;
+    padding: 0;
+}
+
 .contact__submit-btn {
     display: block;
     width: 160px;
