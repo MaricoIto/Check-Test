@@ -3,7 +3,7 @@
 <link rel="stylesheet" href="{{ asset('css/admin.css') }}" />
 @endsection
 @section('auth_button')
-<a href="{{ route('admin') }}" class="header__btn">logout</a>
+<a href="{{ route('logout') }}" class="header__btn">logout</a>
 @endsection
 
 @section('content')

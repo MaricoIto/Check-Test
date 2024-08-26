@@ -12,6 +12,7 @@ use App\Models\User;
 
 class UserController extends Controller
 {
+    // ユーザー登録
     public function store(UserRequest $request)
     {
         Log::info('Request data:', $request->all());
@@ -29,6 +30,7 @@ class UserController extends Controller
         return view('login');
     }
 
+    //　ログイン
     public function login(LoginRequest $request)
     {
 
@@ -43,5 +45,12 @@ class UserController extends Controller
                 ->withErrors(['email' => '認証に失敗しました。'])
                 ->withInput();
         }
+    }
+
+    // ログアウト
+    public function logout()
+    {
+        Auth::logout();
+        return redirect()->route('login');
     }
 }
