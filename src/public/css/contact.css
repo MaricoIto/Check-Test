@@ -111,15 +111,6 @@ body {
     margin-bottom: 5px;
 }
 
-.custom-radio {
-    display: flex;
-    align-items: center;
-    margin-right: 50px;
-    margin-bottom: 5px;
-    font-family: "Inika", "Noto Sans JP", sans-serif;
-    cursor: pointer;
-}
-
 .custom-radio input[type="radio"] {
     display: none;
 }

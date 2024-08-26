@@ -54,31 +54,30 @@
                     <span class="required-mark">※</span>
                 </th>
                 <td>
-                    <div class="contact__form-item-wrapper">
-                        <label class="custom-radio">
-                            <input type="radio" name="gender" value="1" {{ old('gender') == '1' ? 'checked' : '' }}>
-                            <span>男性</span>
-                        </label>
-                        <label class="custom-radio">
-                            <input type="radio" name="gender" value="2" {{ old('gender') == '2' ? 'checked' : '' }}>
-                            <span>女性</span>
-                        </label>
-                        <label class="custom-radio">
-                            <input type="radio" name="gender" value="3" {{ old('gender') == '3' ? 'checked' : '' }}>
-                            <span>その他</span>
-                        </label>
-                        @if($errors->has('gender'))
-                        <div class="contact__form-group--alert">
-                            <ul>
-                                @foreach ($errors->get('gender') as $error)
-                                <li>{{ $error }}</li>
-                                @endforeach
-                            </ul>
-                        </div>
-                        @endif
+                    <label class="custom-radio">
+                        <input type="radio" name="gender" value="1" {{ old('gender', '1') == '1' ? 'checked' : '' }}>
+                        <span>男性</span>
+                    </label>
+                    <label class="custom-radio">
+                        <input type="radio" name="gender" value="2" {{ old('gender') == '2' ? 'checked' : '' }}>
+                        <span>女性</span>
+                    </label>
+                    <label class="custom-radio">
+                        <input type="radio" name="gender" value="3" {{ old('gender') == '3' ? 'checked' : '' }}>
+                        <span>その他</span>
+                    </label>
+                    @if($errors->has('gender'))
+                    <div class="contact__form-group--alert">
+                        <ul>
+                            @foreach ($errors->get('gender') as $error)
+                            <li>{{ $error }}</li>
+                            @endforeach
+                        </ul>
                     </div>
+                    @endif
                 </td>
             </tr>
+
 
             <tr>
                 <th>
