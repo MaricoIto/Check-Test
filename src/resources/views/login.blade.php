@@ -3,7 +3,7 @@
 <link rel="stylesheet" href="{{ asset('css/login.css') }}" />
 @endsection
 @section('auth_button')
-<a href="{{ route('register') }}" class="header__btn">login</a>
+<a href="{{ route('register') }}" class="header__btn">register</a>
 @endsection
 
 

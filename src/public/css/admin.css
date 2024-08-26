@@ -51,7 +51,6 @@ body {
     color: #8b7969;
 
     appearance: none;
-    appearance: none; /* デフォルトの矢印を非表示 */
     -webkit-appearance: none;
     -moz-appearance: none;
 }
@@ -63,13 +62,9 @@ body {
     background-color: #f4f4f4;
     color: #8b7969;
     font-family: "Inika", "Noto Sans JP", sans-serif;
-
-    appearance: none;
-    -webkit-appearance: none; /* SafariやChrome向け */
-    -moz-appearance: none; /* Firefox向け */
 }
 
-.admin__search-form--select::-ms-expand {
+.admin__search-form--date::-webkit-calendar-picker-indicator {
     display: none;
 }
 
