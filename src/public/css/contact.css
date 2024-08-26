@@ -95,6 +95,15 @@ body {
 
 .category {
     width: 100%;
+    background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg xmlns='http://www.w3.org/2000/svg' width='17' height='20' viewBox='0 0 17 20'%3E%3Cpath fill='%23E0DFDE' d='M8.5 15L2 7h13L8.5 15z'/%3E%3C/svg%3E");
+    background-position: right 10px center;
+    background-size: 17px 20px;
+    background-repeat: no-repeat;
+    color: #beb1a6;
+
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
 }
 
 .content {
