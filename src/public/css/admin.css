@@ -39,11 +39,38 @@ body {
     color: #beb1a6ff;
 }
 
-.admin__search-form--select, .admin__search-form--date {
+.admin__search-form--select,
+.admin__search-form--date {
+    padding: 0 15px;
+    border: 1px solid #e3ded9;
+    background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg xmlns='http://www.w3.org/2000/svg' width='17' height='20' viewBox='0 0 17 20'%3E%3Cpath fill='%23E0DFDE' d='M8.5 15L2 7h13L8.5 15z'/%3E%3C/svg%3E");
+    background-position: right 10px center;
+    background-size: 17px 20px;
+    background-repeat: no-repeat;
+    background-color: #f4f4f4;
+    color: #8b7969;
+
+    appearance: none;
+    appearance: none; /* デフォルトの矢印を非表示 */
+    -webkit-appearance: none;
+    -moz-appearance: none;
+}
+
+.admin__search-form--date {
+    height: 40px;
     padding: 0 15px;
     border: 1px solid #e3ded9;
     background-color: #f4f4f4;
     color: #8b7969;
+    font-family: "Inika", "Noto Sans JP", sans-serif;
+
+    appearance: none;
+    -webkit-appearance: none; /* SafariやChrome向け */
+    -moz-appearance: none; /* Firefox向け */
+}
+
+.admin__search-form--select::-ms-expand {
+    display: none;
 }
 
 .admin__search-form--btn-submit {
@@ -82,7 +109,8 @@ body {
     text-align: left;
 }
 
-.admin__table th, td {
+.admin__table th,
+td {
     min-height: 60px;
     padding: 10px;
     word-wrap: break-word;
@@ -101,11 +129,13 @@ body {
     color: #8b7969;
 }
 
-.admin__table th:first-child, td:first-child {
+.admin__table th:first-child,
+td:first-child {
     padding-left: 3%;
 }
 
-.admin__table th:last-child, td:last-child {
+.admin__table th:last-child,
+td:last-child {
     padding-right: 3%;
 }
 
