@@ -1,9 +1,19 @@
 @extends('layouts.app')
 @section('css')
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+<link rel="stylesheet" href="{{ asset('css/common.css') }}" />
 <link rel="stylesheet" href="{{ asset('css/admin.css') }}" />
 @endsection
 @section('auth_button')
-<a href="{{ route('admin') }}" class="header__btn">logout</a>
+<a href="{{ route('logout') }}"
+    onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+    {{ __('Logout') }}
+</a>
+
+<form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
+    @csrf
+</form>
 @endsection
 
 @section('content')
@@ -37,7 +47,9 @@
     <!-- 出力ボタンとページネーション -->
     <div class="admin__menu">
         <button type="button" class="admin__btn-export" onclick="window.location.href='{{ route('admin.export', request()->query()) }}'">エクスポート</button>
-        {{ $contacts->links() }}
+        <nav class="admin__pagination">
+            {{ $contacts->links('vendor.pagination.bootstrap-4') }}
+        </nav>
     </div>
 
     <!-- テーブル -->

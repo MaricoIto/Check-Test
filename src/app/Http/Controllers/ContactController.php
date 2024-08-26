@@ -81,7 +81,7 @@ class ContactController extends Controller
             ->when($request->input('category_id'), function ($query, $category_id) {
                 return $query->where('category_id', $category_id);
             })
-            ->simplePaginate(7);
+            ->paginate(7);
 
         $categories = Category::all();
 
@@ -89,7 +89,6 @@ class ContactController extends Controller
     }
 
     // CSVエクスポート
-
     public function export(Request $request)
     {
         $contacts = Contact::query()
@@ -124,6 +123,7 @@ class ContactController extends Controller
         ]);
     }
 
+    // 性別のテキストを取得
     private function getGenderText($gender)
     {
         switch ($gender) {
