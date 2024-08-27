@@ -101,14 +101,18 @@ class ContactController extends Controller
 
         $handle = fopen('php://memory', 'r+');
 
-        fputcsv($handle, ['お名前', '性別', 'メールアドレス', 'お問い合わせの種類']);
+        fputcsv($handle, ['お名前', '性別', 'メールアドレス', '電話番号', '住所', '建物名', 'お問い合わせの種類', 'お問い合わせ内容']);
 
         foreach ($contacts as $contact) {
             $row = [
                 $contact->last_name . ' ' . $contact->first_name,
                 $this->getGenderText($contact->gender),
                 $contact->email,
-                $contact->category ? $contact->category->content : '未設定'
+                $contact->tell,
+                $contact->address,
+                $contact->building,
+                $contact->category ? $contact->category->content : '未設定',
+                $contact->detail,
             ];
             fputcsv($handle, $row);
         }
@@ -136,5 +140,14 @@ class ContactController extends Controller
             default:
                 return '未設定';
         }
+    }
+
+    // データを削除
+    public function destroy($id)
+    {
+        $contact = Contact::findOrFail($id);
+        $contact->delete();
+
+        return redirect()->route('admin');
     }
 }

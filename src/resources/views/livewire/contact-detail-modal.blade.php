@@ -1,5 +1,5 @@
 <div>
-    @if($isOpen)
+    @if($isOpen && $contact)
     <div class="modal-backdrop" wire:click="closeModal"></div>
     <div class="modal">
         <div class="modal-content">

@@ -20,9 +20,10 @@
 
 ## 使用技術(実行環境)
 
-- PHP 8.0
-- Laravel 10.0
+- PHP 8.1.29
+- Laravel 8.83.27
 - MySQL 8.0
+- livewire/livewire 
 
 ## ER 図
 
