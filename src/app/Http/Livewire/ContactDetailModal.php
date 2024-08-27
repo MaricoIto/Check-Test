@@ -2,38 +2,27 @@
 
 namespace App\Http\Livewire;
 
+namespace App\Http\Livewire;
+
 use Livewire\Component;
 use App\Models\Contact;
-use Illuminate\Support\Facades\Log; // Logクラスをインポート
 
 class ContactDetailModal extends Component
 {
     public $contact;
     public $isOpen = false;
 
-    protected $listeners = [
-        'showContactDetail' => 'openModal'
-    ];
+    protected $listeners = ['showContactDetail' => 'open'];
 
-    public function openModal($contactId)
+    public function open($contactId)
     {
-        \Log::info('openModal called with contactId: ' . $contactId);
-        $this->contact = Contact::find($contactId);
-
-        if ($this->contact) {
-            \Log::info('Contact found: ', $this->contact->toArray());
-        } else {
-            \Log::error('Contact not found with ID: ' . $contactId);
-            $this->isOpen = false; // モーダルを開かないようにする
-            return;
-        }
-
+        dd('Event triggered with contact ID: ' . $contactId);
+        $this->contact = Contact::findOrFail($contactId);
         $this->isOpen = true;
     }
 
-    public function closeModal()
+    public function close()
     {
-        Log::info('closeModal called');
         $this->isOpen = false;
     }
 

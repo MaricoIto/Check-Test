@@ -14,8 +14,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100..900&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Inika:wght@400;700&display=swap" rel="stylesheet">
     @yield('css')
-    @livewireStyles
-    @livewireScripts
+    @yield('script')
 </head>
 
 <body>
