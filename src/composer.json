@@ -11,7 +11,6 @@
         "laravel/framework": "^8.75",
         "laravel/sanctum": "^2.11",
         "laravel/tinker": "^2.5",
-        "livewire/livewire": "^2.12",
         "symfony/mailer": "^6.1"
     },
     "require-dev": {

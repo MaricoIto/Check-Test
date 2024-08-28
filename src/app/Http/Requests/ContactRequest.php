@@ -22,6 +22,7 @@ class ContactRequest extends FormRequest
             'phone2' => 'required|digits_between:1,5',
             'phone3' => 'required|digits_between:1,5',
             'address' => 'required|string|max:255',
+            'building' => 'nullable|string|max:255',
             'inquiry_type' => 'required|string|max:255',
             'inquiry_content' => 'required|string|max:120',
         ];

@@ -3,10 +3,7 @@ body {
     font-size: 16px;
 }
 
-a.header__btn {
-    color: #d9c6b5 !important;
-    text-decoration: none !important;
-}
+/* ヘッダー内logoutボタンのスタイルはadmin.blade.phpで設定 */
 
 .admin {
     display: flex;
@@ -67,7 +64,13 @@ a.header__btn {
 }
 
 .admin__search-form--date::-webkit-calendar-picker-indicator {
-    display: none;
+    opacity: 0;
+    /* position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; */
+    cursor: pointer;
 }
 
 .admin__search-form--btn-submit {
@@ -174,7 +177,7 @@ a.header__btn {
 }
 
 .admin__table th,
-td {
+.admin__table td {
     min-height: 60px;
     padding: 10px;
     word-wrap: break-word;
@@ -194,20 +197,121 @@ td {
 }
 
 .admin__table th:first-child,
-td:first-child {
+.admin__table td:first-child {
     padding-left: 3%;
 }
 
 .admin__table th:last-child,
-td:last-child {
+.admin__table td:last-child {
     padding-right: 3%;
 }
 
-.admin__table button {
+.admin__table button.admin__table--detail {
     width: 70px;
     height: 35px;
     border: 1px solid #d9c6b599;
     background-color: #f4f4f44d;
     color: #d9c6b5;
     font-size: 16px;
+}
+
+/* モーダル */
+
+.modal-backdrop {
+    background-color: transparent;
+}
+
+.modal-dialog {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 90%;
+    max-width: 800px;
+    margin: auto;
+}
+
+.modal-content {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 800px;
+    max-width: 90%;
+    max-height: 85vh;
+    padding-bottom: 30px;
+    overflow: hidden;
+    overflow-y: auto;
+    border-radius: 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.modal-header {
+    border: none;
+}
+
+.modal-header .btn-close {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    width: 30px;
+    height: 30px;
+    margin: 10px 10px auto auto;
+    border: 1px solid #8b7969;
+    border-radius: 50%;
+    background-color: #ffffff;
+}
+
+.modal-table {
+    max-width: 640px;
+    min-height: 400px;
+    max-height: 70vh;
+    margin: 20px auto;
+    overflow-y: auto;
+    border: none;
+    font-size: 18px;
+    text-align: left;
+    border-collapse: collapse;
+}
+
+.modal-table th,
+.modal-table td {
+    min-height: 60px;
+    background-color: #ffffff;
+    color: #8b7969;
+    word-wrap: break-word;
+    vertical-align: top;
+
+    overflow-wrap: break-word;
+}
+
+.modal-table th {
+    width: 200px;
+    text-align: left;
+}
+
+.modal-table td {
+    min-width: 410px;
+    border-bottom: none;
+    text-align: left;
+}
+
+.modal-delete-container {
+    display: flex;
+    justify-content: center;
+    position: sticky;
+    margin-top: 20px;
+    padding: 10px 0;
+    background-color: #ffffff;
+}
+
+.btn-delete {
+    width: 75px;
+    height: 45px;
+    border: none;
+    border-radius: 0;
+    background-color: #ba370d;
+    color: #ffffff;
+    font-size: 18px;
 }

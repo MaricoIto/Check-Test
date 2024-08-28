@@ -4,6 +4,14 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" href="{{ asset('css/common.css') }}" />
 <link rel="stylesheet" href="{{ asset('css/admin.css') }}" />
+
+<!-- header内logoutボタンのスタイルが_reboot.scssで上書きされてしまうため、ここでスタイルを適用し適用順位を上げる -->
+<style>
+    .logout-btn {
+        color: #d9c6b5 !important;
+        text-decoration: none !important;
+    }
+</style>
 @endsection
 
 @section('script')
@@ -12,7 +20,7 @@
 
 @section('auth_button')
 <a href="{{ route('logout') }}"
-    onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+    onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class="logout-btn">
     {{ __('Logout') }}
 </a>
 
@@ -31,14 +39,14 @@
     <form method="GET" action="{{ route('admin') }}" class="admin__search-form">
         <input type="text" name="keyword" class="admin__search-form--input" placeholder="名前やメールアドレスを入力してください" value="{{ request('keyword') }}">
         <select name="gender" class="admin__search-form--select">
-            <option value="">性別</option>
+            <option value="" disabled selected>性別</option>
             <option value="全部" {{ request('gender') == '全部' ? 'selected' : '' }}>全部</option>
             <option value="1" {{ request('gender') == '1' ? 'selected' : '' }}>男性</option>
             <option value="2" {{ request('gender') == '2' ? 'selected' : '' }}>女性</option>
             <option value="3" {{ request('gender') == '3' ? 'selected' : '' }}>その他</option>
         </select>
         <select name="category_id" class="admin__search-form--select">
-            <option value="">お問い合わせの種類</option>
+            <option value="" disabled selected>お問い合わせの種類</option>
             @foreach($categories as $category)
             <option value="{{ $category->id }}" {{ request('category_id') == $category->id ? 'selected' : '' }}>{{ $category->content }}</option>
             @endforeach
@@ -81,16 +89,18 @@
             <td>{{ $contact->email }}</td>
             <td>{{ $contact->category ? $contact->category->content : '未設定' }}</td>
             <td>
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#contactModal">詳細</button>
+                <button type="button" class="admin__table--detail" data-bs-toggle="modal" data-bs-target="#contactModal{{ $contact->id }}">詳細</button>
 
                 <!-- モーダルのHTML -->
-                <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
+                <div class="modal fade" id="contactModal{{ $contact->id }}" tabindex="-1" aria-labelledby="contactModalLabel{{ $contact->id }}" aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
+
                             <div class="modal-header">
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
-                            <div class="modal-body">
+
+                            <div class="modal-table">
                                 <table>
                                     <tr>
                                         <th>お名前</th>
@@ -114,7 +124,7 @@
                                     </tr>
                                     <tr>
                                         <th>電話番号</th>
-                                        <td>{{ $contact->phone_number }}</td>
+                                        <td>{{ $contact->tell }}</td>
                                     </tr>
                                     <tr>
                                         <th>住所</th>
@@ -122,26 +132,24 @@
                                     </tr>
                                     <tr>
                                         <th>建物名</th>
-                                        <td>{{ $contact->building_name }}</td>
+                                        <td>{{ $contact->building }}</td>
                                     </tr>
                                     <tr>
                                         <th>お問い合わせの種類</th>
-                                        <td>{{ $contact->category }}</td>
+                                        <td>{{ $contact->category ? $contact->category->content : '未設定' }}</td>
                                     </tr>
                                     <tr>
                                         <th>お問合せ内容</th>
                                         <td>{{ $contact->detail }}</td>
                                     </tr>
                                 </table>
-
-                                <form action="{{ route('admin.destroy', $contact->id) }}" method="POST">
+                            </div>
+                            <div class="modal-delete-container">
+                                <form action=" {{ route('admin.destroy', $contact->id) }}" method="POST">
                                     @csrf
                                     @method('DELETE')
-                                    <button type="submit" class="btn btn-danger">削除</button>
+                                    <button type="submit" class="btn-delete">削除</button>
                                 </form>
-
-
-
                             </div>
 
                         </div>
@@ -152,6 +160,7 @@
             </td>
         </tr>
         @endforeach
+
     </table>
 
 </div>
