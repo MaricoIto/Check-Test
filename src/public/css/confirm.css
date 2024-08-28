@@ -21,6 +21,7 @@ body {
 }
 
 /* テーブル */
+
 .confirm__table {
     width: 100%;
     border: 1px solid #e0dfde;
@@ -55,7 +56,7 @@ body {
     border-top: none;
     border-bottom: 1px solid #e0dfde;
 
-    gap: 15px;
+    gap: 20px;
 }
 
 .confirm__table th:first-child, .confirm__table td:first-child {
