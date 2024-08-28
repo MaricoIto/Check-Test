@@ -13,11 +13,13 @@ class Contact extends Model
     protected $fillable = [
         'first_name',
         'last_name',
+        'gender',
         'email',
-        'phone',
+        'tell',
         'address',
-        'inquiry_type',
-        'inquiry_content',
+        'building',
+        'detail',
+        'category_id',
     ];
 
     // カテゴリーとのリレーション

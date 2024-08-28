@@ -52,10 +52,7 @@
             @csrf
             <button type="submit" class="confirm__btn--submit">送信</button>
         </form>
-        <form method="POST" action="{{ route('index') }}">
-            @csrf
-            <a href="{{ route('index') }}" class="confirm__btn--back">修正</a>
-        </form>
+        <a href="{{ route('index') }}" class="confirm__btn--back">修正</a>
     </div>
 </div>
 @endsection
