@@ -20,6 +20,8 @@ body {
     text-align: center;
 }
 
+/* フォーム */
+
 .contact__form-table {
     width: 100%;
 }
@@ -38,8 +40,13 @@ body {
     flex-direction: row;
     align-items: flex-start;
     width: 100%;
+}
 
-    gap: 10px;
+.name-wrapper {
+    display: flex;
+    justify-content: space-between;
+
+    gap: 40px !important;
 }
 
 .phone-wrapper {
@@ -49,7 +56,7 @@ body {
     min-height: 60px;
     padding-bottom: 20px;
 
-    gap: 5px;
+    gap: 15px;
 }
 
 .contact__form-item-wrapper {
@@ -98,22 +105,25 @@ body {
 }
 
 .category {
-    width: 100%;
+    width: 330px;
     background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg xmlns='http://www.w3.org/2000/svg' width='17' height='20' viewBox='0 0 17 20'%3E%3Cpath fill='%23E0DFDE' d='M8.5 15L2 7h13L8.5 15z'/%3E%3C/svg%3E");
     background-position: right 10px center;
     background-size: 17px 20px;
     background-repeat: no-repeat;
     color: #beb1a6;
 
-            appearance: none;
+    appearance: none;
     -webkit-appearance: none;
-       -moz-appearance: none;
+    -moz-appearance: none;
 }
 
 .content {
     height: 130px;
     margin-bottom: 5px;
+    padding: 15px 20px;
 }
+
+/* 性別選択のラジオボタン */
 
 .custom-radio {
     margin-right: 50px;
@@ -137,6 +147,8 @@ body {
     content: "●";
 }
 
+/* フォームのアラート */
+
 .contact__form-group--alert {
     width: 100%;
     margin-top: 5px;
@@ -155,6 +167,8 @@ body {
     margin: 0;
     padding: 0;
 }
+
+/* 確認画面ボタン */
 
 .contact__submit-btn {
     display: block;

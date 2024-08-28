@@ -21,7 +21,7 @@
 @section('auth_button')
 <a href="{{ route('logout') }}"
     onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class="logout-btn">
-    {{ __('Logout') }}
+    {{ __('logout') }}
 </a>
 
 <form id="logout-form" action="{{ route('logout') }}" method="POST" class="d-none">
@@ -37,6 +37,7 @@
 
     <!-- 検索フォーム -->
     <form method="GET" action="{{ route('admin') }}" class="admin__search-form">
+
         <input type="text" name="keyword" class="admin__search-form--input" placeholder="名前やメールアドレスを入力してください" value="{{ request('keyword') }}">
         <select name="gender" class="admin__search-form--select">
             <option value="" disabled selected>性別</option>
@@ -45,6 +46,7 @@
             <option value="2" {{ request('gender') == '2' ? 'selected' : '' }}>女性</option>
             <option value="3" {{ request('gender') == '3' ? 'selected' : '' }}>その他</option>
         </select>
+
         <select name="category_id" class="admin__search-form--select">
             <option value="" disabled selected>お問い合わせの種類</option>
             @foreach($categories as $category)
@@ -59,7 +61,7 @@
 
     <!-- 出力ボタンとページネーション -->
     <div class="admin__menu">
-        <button type="button" class="admin__btn-export" onclick="window.location.href='{{ route('admin.export', request()->query()) }}'">エクスポート</button>
+        <button type="button" class="admin__btn-export" onclick="window.location.href='{{ route('admin.export', request()->query()) }}';">エクスポート</button>
         <nav class="admin__pagination">
             {{ $contacts->links('vendor.pagination.bootstrap-4') }}
         </nav>

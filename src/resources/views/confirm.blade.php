@@ -7,13 +7,14 @@
 @section('content')
 <div class="confirm">
 
-    <p class="confirm__title">confirm</p>
+    <p class="confirm__title">Confirm</p>
 
     <!-- 確認内容表示 -->
     <table class="confirm__table">
         <tr>
             <th>お名前</th>
-            <td>{{ $data['last_name'] }} {{ $data['first_name'] }}</td>
+            <td><span class="last-name">{{ $data['last_name'] }}</span><span class="first-name">{{ $data['first_name'] }}</span></td>
+
         </tr>
         <tr>
             <th>性別</th>
@@ -42,7 +43,7 @@
         </tr>
         <tr>
             <th>お問い合わせの内容</th>
-            <td>{{ $data['inquiry_content'] }}</td>
+            <td>{!! nl2br(e($data['inquiry_content'])) !!}</td>
         </tr>
     </table>
 

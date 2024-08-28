@@ -15,6 +15,7 @@ body {
     text-align: center;
 }
 
+/* フォーム */
 .login__form-wrapper {
     display: flex;
     align-items: center;

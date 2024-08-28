@@ -15,6 +15,10 @@ class ContactsTableSeeder extends Seeder
      */
     public function run()
     {
+        DB::statement('SET FOREIGN_KEY_CHECKS=0;');
+        DB::table('contacts')->truncate();
+        DB::statement('SET FOREIGN_KEY_CHECKS=1;');
+
         $faker = Faker::create('ja_JP');
 
         for ($i = 0; $i < 35; $i++) {
@@ -27,7 +31,7 @@ class ContactsTableSeeder extends Seeder
                 'tell' => $faker->numerify('###########'),
                 'address' => $faker->prefecture . ' ' . $faker->city . ' ' . $faker->streetAddress,
                 'building' => $faker->optional()->secondaryAddress,
-                'detail' => $faker->realText(200),
+                'detail' => $faker->realText(100),
                 'created_at' => now(),
                 'updated_at' => now(),
             ]);
