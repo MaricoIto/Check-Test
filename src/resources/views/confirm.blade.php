@@ -7,7 +7,7 @@
 @section('content')
 <div class="confirm">
 
-    <p class="confirm__title">confirm</p>
+    <p class="confirm__title">Confirm</p>
 
     <!-- 確認内容表示 -->
     <table class="confirm__table">

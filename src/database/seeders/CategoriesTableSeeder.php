@@ -14,6 +14,10 @@ class CategoriesTableSeeder extends Seeder
      */
     public function run()
     {
+        DB::statement('SET FOREIGN_KEY_CHECKS=0;');
+        DB::table('categories')->truncate();
+        DB::statement('SET FOREIGN_KEY_CHECKS=1;');
+
         DB::table('categories')->insert([
             ['content' => '商品のお届けについて', 'created_at' => now(), 'updated_at' => now()],
             ['content' => '商品の交換について', 'created_at' => now(), 'updated_at' => now()],
