@@ -4,6 +4,14 @@
 <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
 <link rel="stylesheet" href="{{ asset('css/common.css') }}" />
 <link rel="stylesheet" href="{{ asset('css/admin.css') }}" />
+
+<!-- header内logoutボタンのスタイルが_reboot.scssで上書きされてしまうため、ここでスタイルを適用し適用順位を上げる -->
+<style>
+    .logout-btn {
+        color: #d9c6b5 !important;
+        text-decoration: none !important;
+    }
+</style>
 @endsection
 
 @section('script')
@@ -12,7 +20,7 @@
 
 @section('auth_button')
 <a href="{{ route('logout') }}"
-    onclick="event.preventDefault(); document.getElementById('logout-form').submit();">
+    onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class="logout-btn">
     {{ __('Logout') }}
 </a>
 

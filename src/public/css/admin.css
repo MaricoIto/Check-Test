@@ -3,10 +3,7 @@ body {
     font-size: 16px;
 }
 
-a.header__btn {
-    color: #d9c6b5 !important;
-    text-decoration: none !important;
-}
+/* ヘッダー内logoutボタンのスタイルはadmin.blade.phpで設定 */
 
 .admin {
     display: flex;
