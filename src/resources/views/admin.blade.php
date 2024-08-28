@@ -81,16 +81,18 @@
             <td>{{ $contact->email }}</td>
             <td>{{ $contact->category ? $contact->category->content : '未設定' }}</td>
             <td>
-                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#contactModal">詳細</button>
+                <button type="button" class="admin__table--detail" data-bs-toggle="modal" data-bs-target="#contactModal{{ $contact->id }}">詳細</button>
 
                 <!-- モーダルのHTML -->
-                <div class="modal fade" id="contactModal" tabindex="-1" aria-labelledby="contactModalLabel" aria-hidden="true">
+                <div class="modal fade" id="contactModal{{ $contact->id }}" tabindex="-1" aria-labelledby="contactModalLabel{{ $contact->id }}" aria-hidden="true">
                     <div class="modal-dialog">
                         <div class="modal-content">
+
                             <div class="modal-header">
                                 <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                             </div>
-                            <div class="modal-body">
+
+                            <div class="modal-table">
                                 <table>
                                     <tr>
                                         <th>お名前</th>
@@ -114,7 +116,7 @@
                                     </tr>
                                     <tr>
                                         <th>電話番号</th>
-                                        <td>{{ $contact->phone_number }}</td>
+                                        <td>{{ $contact->tell }}</td>
                                     </tr>
                                     <tr>
                                         <th>住所</th>
@@ -126,22 +128,20 @@
                                     </tr>
                                     <tr>
                                         <th>お問い合わせの種類</th>
-                                        <td>{{ $contact->category }}</td>
+                                        <td>{{ $contact->category ? $contact->category->content : '未設定' }}</td>
                                     </tr>
                                     <tr>
                                         <th>お問合せ内容</th>
                                         <td>{{ $contact->detail }}</td>
                                     </tr>
                                 </table>
-
-                                <form action="{{ route('admin.destroy', $contact->id) }}" method="POST">
+                            </div>
+                            <div class="modal-delete-container">
+                                <form action=" {{ route('admin.destroy', $contact->id) }}" method="POST">
                                     @csrf
                                     @method('DELETE')
-                                    <button type="submit" class="btn btn-danger">削除</button>
+                                    <button type="submit" class="btn-delete">削除</button>
                                 </form>
-
-
-
                             </div>
 
                         </div>
@@ -152,6 +152,7 @@
             </td>
         </tr>
         @endforeach
+
     </table>
 
 </div>

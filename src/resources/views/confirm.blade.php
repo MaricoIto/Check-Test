@@ -33,8 +33,9 @@
         </tr>
         <tr>
             <th>建物名</th>
-            <td>{{ isset($data['building']) && $data['building'] ? e($data['building']) : '' }}</td>
+            <td>{!! $data['building'] !!}</td>
         </tr>
+
         <tr>
             <th>お問い合わせの種類</th>
             <td>{{ $data['inquiry_type'] }}</td>
@@ -51,8 +52,10 @@
             @csrf
             <button type="submit" class="confirm__btn--submit">送信</button>
         </form>
-
-        <a href="{{ route('index') }}" class="confirm__btn--back">修正</a>
+        <form method="POST" action="{{ route('index') }}">
+            @csrf
+            <a href="{{ route('index') }}" class="confirm__btn--back">修正</a>
+        </form>
     </div>
 </div>
 @endsection

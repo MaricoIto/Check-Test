@@ -12,9 +12,11 @@ use Illuminate\Support\Facades\Log;
 class ContactController extends Controller
 {
     // お問い合わせフォームを表示
-    public function index()
+    public function index(Request $request)
     {
-        return view('index');
+        $categories = Category::all();
+        $data = $request->session()->get('contact', []);
+        return view('index', compact('categories', 'data'));
     }
 
 
@@ -22,7 +24,7 @@ class ContactController extends Controller
     public function confirm(ContactRequest $request)
     {
         $data = $request->validated();
-        $data['building'] = $data['building'] ?? '';
+        $data['building'] = !empty($data['building']) ? $data['building'] : null;
         $request->session()->put('contact', $data);
 
         return view('confirm', compact('data'));
@@ -33,7 +35,18 @@ class ContactController extends Controller
     {
         $data = $request->session()->get('contact');
 
-        $data['tell'] = $data['phone1'] . '-' . $data['phone2'] . '-' . $data['phone3'];
+        if (!$data) {
+            return redirect()->route('index')->with('error', 'セッションデータが見つかりません。');
+        }
+
+        $category = Category::where('content', $data['inquiry_type'])->first();
+
+        if (!$category) {
+            return redirect()->route('index')->with('error', '無効なカテゴリが選択されました。');
+        }
+        $data['category_id'] = $category->id;
+
+        $data['tell'] = $data['phone1'] . $data['phone2'] . $data['phone3'];
 
         Contact::create([
             'first_name' => $data['first_name'],
@@ -44,7 +57,7 @@ class ContactController extends Controller
             'address' => $data['address'],
             'building' => $data['building'] ?? null,
             'detail' => $data['inquiry_content'],
-            'category_id' => $data['inquiry_type'],
+            'category_id' => $data['category_id'],
         ]);
 
         $request->session()->forget('contact');
