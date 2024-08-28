@@ -239,7 +239,11 @@ body {
     width: 800px;
     max-width: 90%;
     max-height: 85vh;
+    padding-bottom: 30px;
+    overflow: hidden;
+    overflow-y: auto;
     border-radius: 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
 .modal-header {
@@ -296,8 +300,10 @@ body {
 .modal-delete-container {
     display: flex;
     justify-content: center;
+    position: sticky;
     margin-top: 20px;
-    margin-bottom: 70px;
+    padding: 10px 0;
+    background-color: #ffffff;
 }
 
 .btn-delete {
