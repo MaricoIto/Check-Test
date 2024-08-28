@@ -43,7 +43,7 @@
         </tr>
         <tr>
             <th>お問い合わせの内容</th>
-            <td>{{ $data['inquiry_content'] }}</td>
+            <td>{!! nl2br(e($data['inquiry_content'])) !!}</td>
         </tr>
     </table>
 

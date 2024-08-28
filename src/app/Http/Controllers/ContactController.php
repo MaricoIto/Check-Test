@@ -8,6 +8,7 @@ use Illuminate\Http\Request;
 use App\Http\Requests\ContactRequest;
 use Illuminate\Support\Facades\Response;
 use Illuminate\Support\Facades\Log;
+use Illuminate\Support\Facades\DB;
 
 class ContactController extends Controller
 {
@@ -23,6 +24,13 @@ class ContactController extends Controller
     // 確認画面を表示
     public function confirm(ContactRequest $request)
     {
+
+        DB::listen(function ($query) {
+            logger($query->sql);
+            logger($query->bindings);
+            logger($query->time);
+        });
+
         $data = $request->validated();
         $data['building'] = !empty($data['building']) ? $data['building'] : null;
         $request->session()->put('contact', $data);
@@ -80,6 +88,7 @@ class ContactController extends Controller
     // 管理者画面を表示
     public function admin(Request $request)
     {
+
         $contacts = Contact::query()
             ->when($request->input('keyword'), function ($query, $keyword) {
                 return $query->where(function ($q) use ($keyword) {
@@ -89,16 +98,22 @@ class ContactController extends Controller
                 });
             })
             ->when($request->input('gender') && $request->input('gender') !== '全部', function ($query, $gender) {
-                return $query->where('gender', $gender);
+                return $query->where('gender', (int)$gender);
             })
             ->when($request->input('category_id'), function ($query, $category_id) {
                 return $query->where('category_id', $category_id);
+            })
+            ->when($request->input('date'), function ($query, $date) {
+                return $query->whereDate('created_at', '=', $date);
             })
             ->paginate(7);
 
         $categories = Category::all();
 
-        return view('admin', compact('contacts', 'categories'));
+        return view(
+            'admin',
+            compact('contacts', 'categories')
+        );
     }
 
     // CSVエクスポート

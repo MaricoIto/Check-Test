@@ -27,11 +27,12 @@ body {
     border: 1px solid #e0dfde;
     font-size: 18px;
     text-align: left;
+    table-layout: auto;
     border-collapse: collapse;
 }
 
 .confirm__table th, .confirm__table td {
-    height: 70px;
+    min-height: 70px;
     padding: 0 5%;
     line-height: 1.5;
     text-align: left;
@@ -49,12 +50,16 @@ body {
 }
 
 .confirm__table td {
-    display: flex;
     justify-content: flex-start;
     align-items: center;
     width: 100%;
+    padding: 20px 40px;
     border-top: none;
     border-bottom: 1px solid #e0dfde;
+    line-height: .7;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    vertical-align: top;
 
     gap: 20px;
 }
@@ -73,6 +78,10 @@ body {
 
 .confirm__table tr:last-child th, .confirm__table tr:last-child td {
     border-bottom: none;
+}
+
+.last-name, .first-name {
+    margin-right: 10px; /* 必要なスペース量に応じて調整 */
 }
 
 .confirm__btn {
