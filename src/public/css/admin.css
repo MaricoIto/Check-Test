@@ -38,7 +38,8 @@ body {
     color: #beb1a6ff;
 }
 
-.admin__search-form--select, .admin__search-form--date {
+.admin__search-form--select,
+.admin__search-form--date {
     padding: 0 15px;
     border: 1px solid #e3ded9;
     background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg xmlns='http://www.w3.org/2000/svg' width='17' height='20' viewBox='0 0 17 20'%3E%3Cpath fill='%23E0DFDE' d='M8.5 15L2 7h13L8.5 15z'/%3E%3C/svg%3E");
@@ -48,9 +49,9 @@ body {
     background-color: #f4f4f4;
     color: #8b7969;
 
-            appearance: none;
+    appearance: none;
     -webkit-appearance: none;
-       -moz-appearance: none;
+    -moz-appearance: none;
 }
 
 .admin__search-form--date {
@@ -63,7 +64,13 @@ body {
 }
 
 .admin__search-form--date::-webkit-calendar-picker-indicator {
-    display: none;
+    opacity: 0;
+    /* position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%; */
+    cursor: pointer;
 }
 
 .admin__search-form--btn-submit {
@@ -148,7 +155,8 @@ body {
     color: #d9c6b5;
 }
 
-.pagination .page-item:first-child .page-link, .pagination .page-item:last-child .page-link {
+.pagination .page-item:first-child .page-link,
+.pagination .page-item:last-child .page-link {
     font-size: 20px;
     font-family: "Inka" serif;
 }
@@ -168,7 +176,8 @@ body {
     text-align: left;
 }
 
-.admin__table th, .admin__table td {
+.admin__table th,
+.admin__table td {
     min-height: 60px;
     padding: 10px;
     word-wrap: break-word;
@@ -187,11 +196,13 @@ body {
     color: #8b7969;
 }
 
-.admin__table th:first-child, .admin__table td:first-child {
+.admin__table th:first-child,
+.admin__table td:first-child {
     padding-left: 3%;
 }
 
-.admin__table th:last-child, .admin__table td:last-child {
+.admin__table th:last-child,
+.admin__table td:last-child {
     padding-right: 3%;
 }
 
@@ -260,7 +271,8 @@ body {
     border-collapse: collapse;
 }
 
-.modal-table th, .modal-table td {
+.modal-table th,
+.modal-table td {
     min-height: 60px;
     background-color: #ffffff;
     color: #8b7969;
@@ -271,12 +283,12 @@ body {
 }
 
 .modal-table th {
-    width: 15%;
+    width: 200px;
     text-align: left;
 }
 
 .modal-table td {
-    width: 35%;
+    min-width: 410px;
     border-bottom: none;
     text-align: left;
 }

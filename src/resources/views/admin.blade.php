@@ -39,14 +39,14 @@
     <form method="GET" action="{{ route('admin') }}" class="admin__search-form">
         <input type="text" name="keyword" class="admin__search-form--input" placeholder="名前やメールアドレスを入力してください" value="{{ request('keyword') }}">
         <select name="gender" class="admin__search-form--select">
-            <option value="">性別</option>
+            <option value="" disabled selected>性別</option>
             <option value="全部" {{ request('gender') == '全部' ? 'selected' : '' }}>全部</option>
             <option value="1" {{ request('gender') == '1' ? 'selected' : '' }}>男性</option>
             <option value="2" {{ request('gender') == '2' ? 'selected' : '' }}>女性</option>
             <option value="3" {{ request('gender') == '3' ? 'selected' : '' }}>その他</option>
         </select>
         <select name="category_id" class="admin__search-form--select">
-            <option value="">お問い合わせの種類</option>
+            <option value="" disabled selected>お問い合わせの種類</option>
             @foreach($categories as $category)
             <option value="{{ $category->id }}" {{ request('category_id') == $category->id ? 'selected' : '' }}>{{ $category->content }}</option>
             @endforeach
@@ -132,7 +132,7 @@
                                     </tr>
                                     <tr>
                                         <th>建物名</th>
-                                        <td>{{ $contact->building_name }}</td>
+                                        <td>{{ $contact->building }}</td>
                                     </tr>
                                     <tr>
                                         <th>お問い合わせの種類</th>
