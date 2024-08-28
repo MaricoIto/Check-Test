@@ -23,7 +23,8 @@
 - PHP 8.1.29
 - Laravel 8.83.27
 - MySQL 8.0
-- livewire/livewire 
+- Bootstrap 5.3.0
+  - 管理画面のページネーションおよびモーダルウィンドウの表示に使用
 
 ## ER 図
 
