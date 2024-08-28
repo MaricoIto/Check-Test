@@ -35,6 +35,6 @@ Route::middleware(['auth'])->group(function () {
     Route::get('/admin', [ContactController::class, 'admin'])->name('admin');
     Route::get('admin/search', [ContactController::class, 'search'])->name('admin.search');
     Route::get('/admin/export', [ContactController::class, 'export'])->name('admin.export');
-    Route::get('/logout', [UserController::class, 'logout'])->name('logout');
+    Route::post('/logout', [UserController::class, 'logout'])->name('logout');
     Route::delete('/admin/{id}', [ContactController::class, 'destroy'])->name('admin.destroy');
 });
