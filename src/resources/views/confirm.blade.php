@@ -13,7 +13,8 @@
     <table class="confirm__table">
         <tr>
             <th>お名前</th>
-            <td>{{ $data['last_name'] }} {{ $data['first_name'] }}</td>
+            <td><span class="last-name">{{ $data['last_name'] }}</span><span class="first-name">{{ $data['first_name'] }}</span></td>
+
         </tr>
         <tr>
             <th>性別</th>
